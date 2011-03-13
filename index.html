@@ -16,7 +16,16 @@
 						}
 					)
 					.appendTo(this);				
-			})
+			});
+			
+			$('.filter').click(function(){
+				var $filter = $(this),
+					classname = '.' + $filter.text().toLowerCase(),
+					fx = $filter.is('.collapsed') ? 'slideDown' : 'slideUp';
+
+				$filter.toggleClass('collapsed');
+				$(classname)[fx]();
+			});
 		});
 	</script>
 </head>
@@ -36,17 +45,17 @@
 				
 				<h2>Filter By...</h2>
 				
-				<h3>Presentation</h3>
+				<h3 class="filter">Presentation</h3>
 				
-				<ul class="filters">
+				<ul class="presentation filters">
 					<li><a class="checkbox checked">Hardcandy</a></li>
 					<li><a class="checkbox">Poppy</a></li>
 					<li><a class="checkbox">Chewy</a></li>
 				</ul>			
 				
-				<h3>Flavor</h3>
+				<h3 class="filter">Flavor</h3>
 				
-				<ul class="filters">
+				<ul class="flavor filters">
 					<li><a class="checkbox checked">Sandia</a></li>
 					<li><a class="checkbox">Melon</a></li>
 					<li><a class="checkbox">Cereza</a></li>
