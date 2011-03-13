@@ -22,7 +22,7 @@ ul { margin-bottom: 10px; }
 .checkbox { background: #737373 url("checkbox.png") no-repeat; color: #fff; cursor: pointer; display: block; line-height: 30px; height: 30px; padding-left: 30px; }
 .checkbox.checked { background-position: 0 -30px; }
 
-.create-button { background: url("button.png"); cursor: pointer; display: block; height: 47px; left: -3px; line-height: 47px; margin-bottom: 10px; position: relative; text-align: center; width: 206px; }
+.create-button { background: url("button.png"); color: #000; cursor: pointer; display: block; height: 39px; left: -3px; line-height: 39px; margin-bottom: 10px; padding: 3px 0 5px; position: relative; text-align: center; text-decoration: none; width: 206px; }
 .create-button:hover { background-color: #fff; }
 
 .extras { position: absolute; right: 10px; top: 10px; z-index: 10; }

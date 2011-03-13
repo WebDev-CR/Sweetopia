@@ -66,4 +66,6 @@ $(function(){
 		$filter.toggleClass('collapsed');
 		$(classname)[fx]('fast');
 	});
+	
+	$('#customize').fancybox({ autoScale: false, height: 920, type: 'iframe', width: 920 });
 });
