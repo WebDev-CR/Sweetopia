@@ -1,22 +1,49 @@
 <!doctype html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<link rel="stylesheet" href="css/screen.css">
 	<script src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.4.min.js"></script>
-	<script>
+	<script charset="utf-8">
 		$(function(){
-			$('.candy').each(function(){
-				$('<div class="hover" />')
-					.hover(
-						function(){
-							$(this).css('opacity', 0);
-						}, 
-						function(){
-							$(this).css('opacity', 0.05);
+			var $hud = $('.hud');
+			
+			$('.candy')
+				.each(function(){
+					$('<div class="hover" />').appendTo(this);				
+				})
+				.hover(
+					function(event){ // mouseenter
+						$('.hover').css('opacity', 0.05);
+						var $candy = $(this),
+							$hover = $candy.find('.hover').css('opacity', 0),
+							offset = $candy.offset();
+							
+						if (!$candy.data('html')){
+							$hud.find('.extras-expanded').html($candy.find('.extras').html());
+							$hud.find('.flavor').html($candy.find('input[name=flavor]').val() + ' ' + $candy.find('input[name=presentation]').val());
+							$hud.find('.price').html('¢' + $candy.find('input[name=price]').val() + '/kg');
+							$candy.data('html', $hud.html());
 						}
-					)
-					.appendTo(this);				
-			});
+						
+						offset.left += 180;
+						$hud.css(offset).html($candy.data('html')).show();				
+					}, 
+					function(event){ // mouseleave
+						if ($hud.is(':visible')){
+							var offset = $hud.offset(), 
+								width = $hud.width(), 
+								height = $hud.height();
+							if (event.pageX > offset.left && event.pageX < offset.left + width && event.pageY > offset.top && event.pageY < offset.top + height){
+								console.log('hovering');
+							}
+							else {
+								$(this).find('.hover').css('opacity', 0.05);
+								$hud.hide();
+							}
+						}
+					}
+				)
 			
 			$('.filter').click(function(){
 				var $filter = $(this),
@@ -66,35 +93,101 @@
 				<div class="line">
 					<div class="candy unit">
 						<img class="cherry" src="images/candy.png" width="120" height="120" alt="Candy">
+						
 						<p>Yummy Candy!</p>
+						
+						<div class="extras">
+							<a class="chewy" title="chewy">Chewy</a>
+							<a class="spicy" title="spicy">Spicy</a>
+						</div>
+						
+						<input type="hidden" name="flavor" value="Grapefruit">
+						<input type="hidden" name="presentation" value="Hardcandy">
+						<input type="hidden" name="price" value="2.000">
 					</div>
 
 					<div class="candy unit">
 						<img class="cherry" src="images/candy.png" width="120" height="120" alt="Candy">
 						<p>Yummy Candy!</p>
+						<div class="extras">
+							<a class="spicy" title="spicy">Spicy</a>
+						</div>
+						
+						<input type="hidden" name="flavor" value="Grapefruit">
+						<input type="hidden" name="presentation" value="Hardcandy">
+						<input type="hidden" name="price" value="2.000">
 					</div>
 
 					<div class="candy unit">
 						<img class="cherry" src="images/candy.png" width="120" height="120" alt="Candy">
 						<p>Yummy Candy!</p>
+						<div class="extras">
+							<a class="sour" title="sour">Sour</a>
+							<a class="spicy" title="spicy">Spicy</a>
+						</div>
+						
+						<input type="hidden" name="flavor" value="Grapefruit">
+						<input type="hidden" name="presentation" value="Hardcandy">
+						<input type="hidden" name="price" value="2.000">
 					</div>
 					
 					<div class="candy unit">
 						<img class="cherry" src="images/candy.png" width="120" height="120" alt="Candy">
 						<p>Yummy Candy!</p>
-						<p>Yummy Candy!</p>
+						<div class="extras">
+							<a class="sweet" title="sweet">Sweet</a>
+						</div>
+						
+						<input type="hidden" name="flavor" value="Grapefruit">
+						<input type="hidden" name="presentation" value="Hardcandy">
+						<input type="hidden" name="price" value="2.000">
 					</div>
 
 					<div class="candy unit">
 						<img class="cherry" src="images/candy.png" width="120" height="120" alt="Candy">
 						<p>Yummy Candy!</p>
+						<div class="extras">
+							<a class="chewy" title="chewy">Chewy</a>
+							<a class="spicy" title="spicy">Spicy</a>
+						</div>
+						
+						<input type="hidden" name="flavor" value="Grapefruit">
+						<input type="hidden" name="presentation" value="Hardcandy">
+						<input type="hidden" name="price" value="2.000">
 					</div>
 
 					<div class="candy unit">
 						<img class="cherry" src="images/candy.png" width="120" height="120" alt="Candy">
 						<p>Yummy Candy!</p>
-					</div>					
+						<div class="extras">
+							<a class="sweet" title="sweet">Sweet</a>
+						</div>
+						
+						<input type="hidden" name="flavor" value="Grapefruit">
+						<input type="hidden" name="presentation" value="Hardcandy">
+						<input type="hidden" name="price" value="2.000">
+					</div>				
 				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="hud">
+		<div class="extras-expanded"></div>
+		
+		<div class="line">
+			<span class="flavor unit size2of3"></span>
+			<span class="price lastUnit"></span>
+		</div>
+		
+		<hr />
+				
+		<div class="line">
+			<div class="unit size1of2">
+				<a class="select">1</a>
+			</div>
+			<div class="lastUnit">
+				<a class="buy-button">Buy...</a>
 			</div>
 		</div>
 	</div>

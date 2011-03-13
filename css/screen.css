@@ -6,8 +6,12 @@ html, body { background: #e5e5e5 url("body.png") no-repeat 50% 0; }
 h2 { font-size: 14px; margin-bottom: 10px; }
 h3 { margin-bottom: 10px; }
 hr { margin-bottom: 10px; }
+input[type=hidden] { display: none; }
 p { margin-bottom: 10px; }
 ul { margin-bottom: 10px; }
+
+.buy-button { background: url("buy-button.png") no-repeat; cursor: pointer; display: block; height: 31px; line-height: 31px; margin-right: -3px; padding: 2px 0 4px; text-align: center; width: 101px; }
+.buy-button:hover { background-position: 0 -37px; }
 
 .candy { background: url("candy.png") no-repeat; cursor: pointer; height: 220px; margin: 0 20px 20px 0; position: relative; text-align: center; width: 220px; }
 .candy img { margin-top: 30px; }
@@ -20,6 +24,13 @@ ul { margin-bottom: 10px; }
 .create-button { background: url("button.png"); cursor: pointer; display: block; height: 47px; left: -3px; line-height: 47px; margin-bottom: 10px; position: relative; text-align: center; width: 206px; }
 .create-button:hover { background-color: #fff; }
 
+.extras { position: absolute; right: 10px; top: 10px; z-index: 10; }
+.extras a { background: url("extras.png") no-repeat; display: block; font-size: 1; height: 20px; margin-bottom: 10px; overflow: hidden; text-indent: -1000px; width: 20px; }
+.extras .chewy { background-position: 0 0; }
+.extras .sour { background-position: 0 -20px; }
+.extras .spicy { background-position: 0 -40px; }
+.extras .sweet { background-position: 0 -60px; }
+
 .filter { background: url("filter.png") no-repeat; cursor: pointer; padding-left: 20px; }
 .filter.collapsed { background-position: 0 -32px; }
 
@@ -27,11 +38,27 @@ ul { margin-bottom: 10px; }
 .filters li { margin-bottom: 1px; }
 
 .head { height: 80px; }
+
+.hidden { display: none; }
+
+.hud { background-color: rgba(0, 0, 0, 0.7); border-radius: 20px; -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); color: #fff; display: none; left: 10px; padding: 10px; position: absolute; top: 10px; width: 200px; z-index: 20; }
+.hud .lastUnit { text-align: right; }
+
+.extras-expanded { margin-bottom: 10px; }
+.extras-expanded a { background: url("extra-expanded.png") no-repeat; border-radius: 10px; display: block; font-size: 11px; height: 20px; line-height: 20px; margin-bottom: 10px; padding-left: 10px; }
+.extras-expanded .chewy { background-color: rgba(86, 172, 230, 0.5); }
+.extras-expanded .sour { background-color: rgba(229, 226, 29, 0.5); }
+.extras-expanded .spicy { background-color: rgba(234, 60, 46, 0.5); }
+.extras-expanded .sweet { background-color: rgba(255, 150, 182, 0.5); }
+
 .logo { left: 8px; position: absolute; top: 6px; }
 .logo a { background: url("logo.png"); display: block; font-size: 1; height: 65px; overflow: hidden; text-indent: -1000px; width: 242px; }
+
 .page { background: #fff; padding: 10px; position: relative; width: 940px; }
 
 .rightCol { background: #e6e6e6 url("right-col.png") no-repeat; margin-top: -70px; overflow: hidden; padding: 50px 10px 10px; width: 200px; }
+
+.select { background: url("select") no-repeat; display: block; height: 31px; line-height: 31px; margin-left: -3px; padding: 2px 0 4px 10px; width: 91px; }
 
 /* flavors */
 
