@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" href="css/screen.css">
+	<script src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.4.min.js"></script>
+	<script>
+		$(function(){
+			$('.candy').each(function(){
+				$('<div class="hover" />')
+					.hover(
+						function(){
+							$(this).css('opacity', 0);
+						}, 
+						function(){
+							$(this).css('opacity', 0.05);
+						}
+					)
+					.appendTo(this);				
+			})
+		});
+	</script>
+</head>
+<body>
+	<div class="page">
+		<div class="head">
+			<h1 class="logo"><a href="/">Sweetopia</a></h1>
+		</div>
+			
+		<div class="body">
+			<div class="rightCol">
+				<p>Sweetopia is a candy shop designed by you! Choose from our selection of gourmet flavors, candy styles and extra touches to design the candy you want!</p>
+				
+				<a class="create-button">Create My Crave</a>
+				
+				<hr />
+				
+				<h2>Filter By...</h2>
+				
+				<h3>Presentation</h3>
+				
+				<ul class="filters">
+					<li><a class="checkbox checked">Hardcandy</a></li>
+					<li><a class="checkbox">Poppy</a></li>
+					<li><a class="checkbox">Chewy</a></li>
+				</ul>			
+				
+				<h3>Flavor</h3>
+				
+				<ul class="filters">
+					<li><a class="checkbox checked">Sandia</a></li>
+					<li><a class="checkbox">Melon</a></li>
+					<li><a class="checkbox">Cereza</a></li>
+				</ul>							
+			</div>
+			
+			<div class="main">
+				<div class="line">
+					<div class="candy unit">
+						<img class="cherry" src="images/candy.png" width="120" height="120" alt="Candy">
+						<p>Yummy Candy!</p>
+					</div>
+
+					<div class="candy unit">
+						<img class="cherry" src="images/candy.png" width="120" height="120" alt="Candy">
+						<p>Yummy Candy!</p>
+					</div>
+
+					<div class="candy unit">
+						<img class="cherry" src="images/candy.png" width="120" height="120" alt="Candy">
+						<p>Yummy Candy!</p>
+					</div>
+					
+					<div class="candy unit">
+						<img class="cherry" src="images/candy.png" width="120" height="120" alt="Candy">
+						<p>Yummy Candy!</p>
+						<p>Yummy Candy!</p>
+					</div>
+
+					<div class="candy unit">
+						<img class="cherry" src="images/candy.png" width="120" height="120" alt="Candy">
+						<p>Yummy Candy!</p>
+					</div>
+
+					<div class="candy unit">
+						<img class="cherry" src="images/candy.png" width="120" height="120" alt="Candy">
+						<p>Yummy Candy!</p>
+					</div>					
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
